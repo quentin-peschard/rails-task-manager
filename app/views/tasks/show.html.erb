@@ -1,0 +1,13 @@
+<h2><%= @task.title %></h2>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">Details: <%= @task.details %></li>
+  <li class="list-group-item">Done: <%= @task.completed ? "Yes" : "No" %></li>
+</ul>
+
+<button type="button" class="btn btn-danger"><%= link_to 'Edit my task', edit_task_path(@task) %></button>
+<button type="button" class="btn btn-danger"><%= link_to "Delete #{@task.title}",
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></button>
+
+<button type="button" class="btn btn-light"><%= link_to 'Back to the list', tasks_path %></button>

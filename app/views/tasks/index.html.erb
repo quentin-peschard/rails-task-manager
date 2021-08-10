@@ -1,0 +1,10 @@
+<h1>All my tasks</h1>
+
+<ul class="list-group list-group-flush">
+  <% @tasks.each do |task| %>
+    <li class="list-group-item"><%= link_to task.title, task_path(task)%></li>
+  <% end %>
+</ul>
+
+
+<button type="button" class="btn btn-light"><%= link_to 'Create a task', new_task_path %></button>
